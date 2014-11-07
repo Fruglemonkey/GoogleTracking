@@ -1,5 +1,7 @@
 """This module contains functions for making a graph and finding the shortest
 path between each node in that path."""
+import sys
+sys.path.append('/usr/lib/graphviz/python/')
 # Import graphviz
 import gv
 
