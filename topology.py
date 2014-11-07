@@ -42,6 +42,15 @@ def topomake(nodes):
     return topo, paths
 
 
+def findLongestPath(paths):
+    longestPath=[]
+    for node in paths:
+        for path in node:
+            if len(path) > len(longestPath):
+                longestPath = path
+    return longestPath
+
+
 if __name__ == '__main__':
     n = int(input('size? '))
     topo = topomake(n)
