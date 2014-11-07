@@ -29,12 +29,12 @@ def trackCars(topo, trackedInfo, timeStep):
                         trackedInfo.append(info)
                 break
 
-googChance = 0.1
+googChance = float(raw_input('GoogChance [default=50]: ') or 50)/100
 timeStep = 0
 trackingInfo = [[], [], 0]  # [0] is cars that left, [1] is all cars, [2] is number of goog cars
 trackedInfo = []
 carID = 0
-n = int(input('size? '))
+n = int(raw_input('Size [default=50]: ') or 50) 
 topo, paths = topology.topomake(n)
 # print " " + repr(range(n))
 # for x, y in enumerate(topo):
@@ -72,8 +72,8 @@ print "Total cars: " + repr(carID)
 print "Number of google cars: " + repr(trackingInfo[2])
 print "Actual number of observed car/location/time tuples: " + repr(len(trackedInfo))
 print "Expected number: " + repr(average * (carID - trackingInfo[2]))
-print "Note: This number should be higher than the number observed, because \n" \
+print "\nNote: This number should be higher than the number observed, because \n" \
       "There are still cars in system when simulation ends."
 print "\nPercentage of tracked datapoints: " + repr(len(trackedInfo)/(average * (carID - trackingInfo[2])))
-
-
+print ""
+print "Longest path: " + repr(topology.findLongestPath(paths))
