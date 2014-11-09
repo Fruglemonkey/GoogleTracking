@@ -9,11 +9,7 @@ class Node(object):
     """A node for my custom topology"""
 
     def __init__(self, nodeID, size):
-        """Each node has a list of next-hops.
-
-        :nodeID: Node ID.
-        :size: Size of the graph. Used to create nextHops
-        """
+        """Each node has a list of next-hops."""
         self._nodeID = nodeID
         self._nextHops = [None] * size
         self._cars = []
@@ -28,8 +24,7 @@ class Node(object):
 
 
 def topomake(nodes):
-    """There are :nodes: number of nodes.
-    nodes = [[] for x in range(nodes)]"""
+    """There are :nodes: number of nodes."""
     topo = [None] * nodes
     graph = graphmake.graphgen(nodes)
     paths = graphmake.pathgen(graph)
@@ -43,7 +38,8 @@ def topomake(nodes):
 
 
 def findLongestPath(paths):
-    longestPath=[]
+    """Used for debugging. Finds the longest path present in a given graph."""
+    longestPath = []
     for node in paths:
         for path in node:
             if len(path) > len(longestPath):

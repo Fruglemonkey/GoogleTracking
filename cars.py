@@ -1,4 +1,4 @@
-"""Car functions + object."""
+"""Car functions + class."""
 from random import randint, random
 import topology
 
@@ -31,6 +31,7 @@ class Car(object):
         print "Trip: " + repr(self._trip)
         print "timeStep: " + repr(self._timeStep)
         print ""
+
 
 def addCar(topo, paths, googChance, ID, timestep, start=-1):
     """Add a car to a node in the topology. If no node is specified, add the
